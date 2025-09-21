@@ -1,7 +1,24 @@
 package project;
 import java.util.Scanner;
 
+/*
+ Головний клас програми для роботи з числами Фібоначчі.
+
+ У програмі можна:
+ <ul>
+   <li>Обчислити перші N чисел Фібоначчі.</li>
+   <li>Вивести їх на екран.</li>
+   <li>Знайти числа, які можна подати у вигляді k² + 1.</li>
+ </ul>
+ */
 public class Main {
+
+    /*
+     Обчислює n-те число Фібоначчі.
+
+     @param n порядковий номер числа (n ≥ 1)
+     @return n-те число Фібоначчі
+     */
     public static long fibonacci(int n) {
         if (n == 1 || n == 2) return 1;
         long a = 1, b = 1;
@@ -14,6 +31,19 @@ public class Main {
         return b;
     }
 
+    /*
+     Точка входу в програму.
+
+     <p>Можливості:</p>
+     <ul>
+       <li>Приймає число N через аргументи командного рядка.</li>
+       <li>Якщо аргумент не задано – запитує N через {@link Scanner}.</li>
+       <li>Обчислює перші N чисел Фібоначчі та виводить їх.</li>
+       <li>Перевіряє, які з них можна подати як k² + 1.</li>
+     </ul>
+
+     @param args аргументи командного рядка; якщо args[0] задано – це число N
+     */
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int N;
