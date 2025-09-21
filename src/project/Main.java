@@ -1,35 +1,6 @@
 package project;
 import java.util.Scanner;
 
-class FibonacciNumber {
-    private int index;
-    private long value;
-
-    public FibonacciNumber(int index, long value) {
-        this.index = index;
-        this.value = value;
-    }
-
-    public long getValue() {
-        return value;
-    }
-
-    public boolean isSquarePlusOne() {
-        if (value - 1 <= 0) return false;
-
-        for (long k = 1; k * k <= value - 1; k++) {
-            if (k * k == value - 1) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public String info() {
-        return "Число №" + index + " = " + value;
-    }
-}
-
 public class Main {
     public static long fibonacci(int n) {
         if (n == 1 || n == 2) return 1;
@@ -55,18 +26,18 @@ public class Main {
             N = scan.nextInt();
         }
 
-        FibonacciNumber[] numbers = new FibonacciNumber[N];
+        FibonachiNumber[] numbers = new FibonachiNumber[N];
 
         System.out.println("\nПерші " + N + " чисел Фібоначчі:");
         for (int i = 1; i <= N; i++) {
             long value = fibonacci(i);
-            numbers[i - 1] = new FibonacciNumber(i, value);
+            numbers[i - 1] = new FibonachiNumber(i, value);
             System.out.println(numbers[i - 1].info());
         }
 
         System.out.println("\nЧисла Фібоначчі, які можна подати як k^2 + 1:");
         boolean found = false;
-        for (FibonacciNumber num : numbers) {
+        for (FibonachiNumber num : numbers) {
             if (num.isSquarePlusOne()) {
                 System.out.println(num.info() + " = " + ((long)Math.pow(num.getValue()-1, 0.5)) + "^2 + 1");
                 found = true;
